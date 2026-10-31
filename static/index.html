@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laya — Routeur multi-LLM</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/app.js" defer></script>
+</head>
+<body>
+    <main class="app">
+        <header class="header">
+            <div>
+                <h1>Laya Router</h1>
+                <p>Routage intelligent · LM Studio</p>
+            </div>
+            <div class="header-actions">
+                <a class="stats-link" href="/stats">Statistiques ↗</a>
+                <span id="status" class="status">Vérification...</span>
+            </div>
+        </header>
+
+        <section id="messages" class="messages" aria-live="polite">
+            <div class="welcome">
+                <h2>Que souhaitez-vous faire ?</h2>
+                <p>Laya choisira le modèle le plus adapté à votre demande.</p>
+                <div class="suggestions">
+                    <button class="suggestion"
+                        data-question="Écris une fonction Python pour trier une liste.">
+                        Programmer en Python
+                    </button>
+                    <button class="suggestion"
+                        data-question="Résous ce problème logique : trois interrupteurs sont à l'extérieur d'une pièce et un seul commande une ampoule. Comment identifier le bon en entrant une seule fois ?">
+                        Résoudre un problème logique
+                    </button>
+                    <button class="suggestion"
+                        data-question="Explique simplement pourquoi le ciel est bleu.">
+                        Obtenir une explication simple
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <form id="chat-form" class="composer">
+            <textarea
+                id="question"
+                placeholder="Posez votre question..."
+                rows="2"
+                required
+            ></textarea>
+            <div class="composer-footer">
+                <span>CPU : Laya · LLM : LM Studio</span>
+                <button id="send" type="submit">Envoyer ↑</button>
+            </div>
+        </form>
+        <footer>Prototype local · Les requêtes restent sur votre machine.</footer>
+    </main>
+</body>
+</html>

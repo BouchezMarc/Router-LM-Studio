@@ -1,0 +1,258 @@
+.stats-app {
+    width: min(1200px, 100%);
+}
+
+.page-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.page-nav a, #refresh {
+    padding: 9px 12px;
+    border: 1px solid #363b49;
+    border-radius: 9px;
+    color: #e8eaf0;
+    background: #191c25;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.page-nav a:hover, #refresh:hover {
+    border-color: #8888ee;
+}
+
+#refresh:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.stats-section {
+    margin-top: 28px;
+}
+
+.stats-section h2 {
+    margin: 0 0 16px;
+    font-size: 1.15rem;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+.muted, .empty {
+    color: #9298a8;
+    font-size: .88rem;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.stat-card, .model-card {
+    padding: 16px;
+    border: 1px solid #2d3240;
+    border-radius: 14px;
+    background: #181b24;
+    min-width: 0;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-card span {
+    color: #aeb5c4;
+    font-size: .82rem;
+}
+
+.stat-card strong {
+    font-size: clamp(1.3rem, 2.3vw, 1.8rem);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+
+.stat-card small {
+    color: #9298a8;
+    line-height: 1.4;
+}
+
+.model-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.model-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.model-card-head span {
+    color: #a9a8ff;
+    font-size: .84rem;
+}
+
+.bar-track {
+    height: 8px;
+    margin: 14px 0;
+    overflow: hidden;
+    border-radius: 99px;
+    background: #2a2e3b;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: #7774ee;
+}
+
+.model-card dl {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+}
+
+.model-card dl div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: .83rem;
+}
+
+.model-card dt {
+    color: #a6adbb;
+}
+
+.model-card dd {
+    margin: 0;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #2d3240;
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .84rem;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #2d3240;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    color: #b9c0d0;
+    background: #191c25;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+tbody tr:hover {
+    background: #1b1e29;
+}
+
+.history-table {
+    min-width: 1050px;
+}
+
+.question-cell {
+    min-width: 230px;
+    max-width: 360px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.prob-cell {
+    min-width: 125px;
+    line-height: 1.55;
+    white-space: nowrap;
+}
+
+#filter {
+    width: min(340px, 100%);
+    padding: 10px 12px;
+    border: 1px solid #363b49;
+    border-radius: 9px;
+    outline: none;
+    background: #191c25;
+    color: #e8eaf0;
+}
+
+#filter:focus {
+    border-color: #8888ee;
+}
+
+.pill {
+    display: inline-block;
+    padding: 4px 7px;
+    border-radius: 7px;
+    white-space: nowrap;
+    font-size: .76rem;
+}
+
+.pill.good {
+    color: #91e0b4;
+    background: #1d382d;
+}
+
+.pill.bad, .error-text {
+    color: #ff9b9b;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #363b49;
+}
+
+@media (max-width: 950px) {
+    .stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .model-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-nav {
+        width: 100%;
+    }
+    .stat-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    .stat-card {
+        padding: 12px;
+    }
+}
